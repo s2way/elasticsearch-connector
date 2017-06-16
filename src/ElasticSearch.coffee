@@ -128,6 +128,18 @@ class ElasticSearch
     ping: (params, callback) ->
         @client.ping params, callback
 
+    # params
+    # name: the alias name or
+    # index: the index name
+    getAlias: (params, callback) ->
+        @client.indices.getAlias params, callback
+
+    deleteAlias: (params, callback) ->
+        @client.indices.deleteAlias params, callback
+
+    createAlias: (params, callback) ->
+        @client.indices.putAlias params, callback
+
     close: ->
         @client.close()
 
