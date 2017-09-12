@@ -31,6 +31,7 @@ class ElasticSearch
         options.scroll = params.scroll if params?.scroll?
         options.size = params.size if params?.size?
         options._source = params.source if params?.source?
+        options._sourceExclude = params.exclude if params?.exclude?
 
         @client.search options, callback
 
