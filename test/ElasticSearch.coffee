@@ -95,6 +95,7 @@ describe 'The ElasticSearch connector', ->
                 scroll: 'any_scroll'
                 size: 'any_size'
                 source: 'any_source'
+                exclude: ['field1', 'field2']
 
             expectedOptions =
                 index: params.index
@@ -103,6 +104,7 @@ describe 'The ElasticSearch connector', ->
                 scroll: params.scroll
                 size: params.size
                 _source: params.source
+                _sourceExclude: params.exclude
 
             esClient = new ElasticSearch {}
             esClient.client =
